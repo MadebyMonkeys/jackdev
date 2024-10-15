@@ -1,0 +1,53 @@
+{{ define "main" }}
+<section class="[ contact ] [ full-width ] [ region ]">
+    <div class="grid-auto-fit">
+        <div class="flow">
+            <h2 class="block--title">{{ .Params.Block.title }}</h2>
+            <h4 class="block--subtitle h2">{{ .Params.Block.description }}</h4>
+            {{ .Content }}
+        </div>
+        <div>
+            <!-- Make sure you don't change the form action-->
+            <form class="flow" action="https://api.staticforms.xyz/submit" method="post">
+                <!-- Replace with accesKey sent to your email -->
+                <input type="hidden" name="accessKey" value="e44fc5d0-0b52-4cb1-9f79-fefc3800d89c"> <!-- Required -->
+                <div class="field">
+                    <label for="name" id="name">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" name="name">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="subject">Subject</label>
+                    <div class="control">
+                        <input class="input" type="text" name="subject">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" name="email">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="phone">Phone</label>
+                    <div class="control">
+                        <input class="input" type="text" name="phone">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <div class="control">
+                        <textarea class="input" name="message"></textarea>
+                    </div>
+                </div>
+                <!-- Specify @ as reply to value if you want it to be customers email -->
+                <input type="hidden" name="replyTo" value="@"> <!-- Optional -->
+                <!-- If you want form to redirect to a specific url after submission -->
+                <input type="hidden" name="redirectTo" value="https://jackvangestel.nl/contact/success"> <!-- Optional -->
+                <input class="button" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</section>
+{{ end }}

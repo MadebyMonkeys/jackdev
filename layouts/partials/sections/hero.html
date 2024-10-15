@@ -1,0 +1,10 @@
+{{ if .enabled }}
+<section class="[ hero ] [ full-width ] [ region ]">
+    <div class="[ hero__inner ] [ flow text--center ]">
+        <h2 class="h1">{{ .content.title }}</h2>
+        <p>{{ .content.description }}</p>
+        <button>Button</button>
+    </div>
+    <img class="[ hero__image ] [ full full-width-background-img ]" src="{{ .content.image }}" alt="" />
+</section>
+{{ end }}

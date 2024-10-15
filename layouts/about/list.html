@@ -1,0 +1,7 @@
+{{ define "main" }}
+<section class="[ content ] [ flow ] [ region ]">
+    <h2 class="block--title">{{ .Params.Block.title }}</h2>
+    <h4 class="block--subtitle h2">{{ .Params.Block.description }}</h4>
+    {{ .Content }}
+</section>
+{{ end }}

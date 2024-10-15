@@ -1,0 +1,87 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+// Site Nav
+// -----------------------------------------------------------------------------
+
+.site-nav {
+    display: none;
+    position: relative;
+    width: 100%;
+    order: 3;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        --text-max-width: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    &__link {
+        --_nav-link-foreground: var(--nav-link-foreground, #{$site-nav-link-foreground});
+        --_nav-link-background: var(--nav-link-background, #{$site-nav-link-background});
+        --_nav-link-line-height: var(--nav-link-line-height, #{$site-nav-link-line-height});
+        --_nav-link-padding: var(--nav-link-padding, #{$site-nav-link-padding});
+        --_nav-link-border-radius: var(--nav-link-border-radius, #{$site-nav-link-border-radius});
+
+        display: block;
+        color: var(--_nav-link-foreground);
+        background: var(--_nav-link-background);
+        line-height: var(--_nav-link-line-height);
+        text-decoration: none;
+        padding: var(--_nav-link-padding);
+        border-radius: var(--_nav-link-border-radius);
+
+        &:is(:hover) {
+            --nav-link-foreground: #{$site-nav-link-hover-foreground};
+            --nav-link-background: #{$site-nav-link-hover-background};
+        }
+
+        &[aria-current="page"] {
+            --nav-link-foreground: #{$site-nav-link-active-foreground};
+            --nav-link-background: #{$site-nav-link-active-background};
+        }
+    }
+}
+
+// .site-nav.open {
+//     display: block;
+// }
+
+
+[aria-expanded="true"] + nav {
+    display: block;
+}
+
+
+
+
+// -----------------------------------------------------------------------------
+// Site Navigation - Medium and up
+// -----------------------------------------------------------------------------
+
+@include mq(md) {
+    .site-nav {
+        display: block;
+
+        &,
+        &__item {
+            width: auto;
+        }
+
+        &__item {
+            text-align: start;
+        }
+        &__link{
+            --nav-link-padding: #{$site-nav-link-padding-desktop};
+        }
+    }
+}

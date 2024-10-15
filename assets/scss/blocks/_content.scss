@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+.content {
+    --_content-gap: var(--content-gap, #{$content-padding});
+
+    --_feature-max-width: var(--feature-max-width, #{$content-feature-max-width});
+    --_popout-max-width: var(--popout-max-width, #{$content-popout-max-width});
+    --_content-max-width: var(--content-max-width, #{$content-content-max-width});
+
+    --full: minmax(var(--_content-gap), 1fr);
+    --content: min(var(--_content-max-width), 100% - (var(--_content-gap) * 2));
+    --popout: var(--_popout-max-width);
+    --feature: var(--_feature-max-width);
+
+
+    display: grid;
+    grid-template-columns:
+        [full-start] var(--full)
+        [feature-start] var(--feature)
+        [popout-start] var(--popout)
+        [content-start] var(--content) [content-end]
+        var(--popout) [popout-end]
+        var(--feature) [feature-end]
+        var(--full) [full-end];
+}
+
+
+.content {
+    & > * {
+        grid-column: content;
+    }
+
+    .popout {
+        grid-column: popout;
+    }
+
+    .feature {
+        grid-column: feature;
+    }
+
+    .full {
+        grid-column: full;
+    }
+}

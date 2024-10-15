@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+// -----------------------------------------------------------------------------
+// Input
+// -----------------------------------------------------------------------------
+
+input:not([type="button"], [type="reset"], [type="submit"]),
+select,
+textarea {
+    --_input-border: var(--input-border, #{$input-border});
+    --_input-border-radius: var(--input-border-radius, #{$input-border-radius});
+
+    width: 100%;
+    border: var(--_input-border);
+    padding: var(--size-2xs);
+    border-radius: var(--_input-border-radius);
+}
+
+input,
+select {
+    line-height: 1;
+}
+
+input[type="file"] {
+    font-size: 0.9em;
+    padding-top: 0.35rem;
+}
+
+input[readonly] {
+    border-style: dotted;
+    cursor: not-allowed;
+    color: var(--neutral-500);
+}
+
+input[disabled] {
+    --input-border: var(--neutral-300);
+
+    background-color: var(--neutral-200);
+    cursor: not-allowed;
+}
+
+// -----------------------------------------------------------------------------
+// Textarea
+// -----------------------------------------------------------------------------
+
+textarea {
+    resize: vertical;
+}

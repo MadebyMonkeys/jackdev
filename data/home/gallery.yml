@@ -1,0 +1,9 @@
+enabled: true
+id: "gallery"
+
+block:
+  title: Featured Photos
+  description: A small selection from our galleries
+
+content:
+  gallery_id: home-gallery

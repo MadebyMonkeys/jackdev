@@ -1,0 +1,113 @@
+@use "colors" as *;
+
+// -----------------------------------------------------------------------------
+// Global Settings
+// -----------------------------------------------------------------------------
+
+$active-theme: $light;
+
+$global-region-space: 6.6vmax;
+
+
+// -----------------------------------------------------------------------------
+// Page Layout Settings
+// -----------------------------------------------------------------------------
+
+$page-padding-inline: 2rem;
+
+$page-popout-max-width: 1340px;
+$page-content-max-width: 1280px;
+$page-narrow-max-width: 65ch;
+
+
+//
+//
+//
+
+$site-header-block-padding: var(--size-s);
+$site-header-background: transparent;
+
+
+//
+//
+//
+
+$site-nav-link-foreground: var(--neutral-500);
+$site-nav-link-hover-foreground: var(--neutral-700);
+$site-nav-link-active-foreground: var(--neutral-900);
+
+$site-nav-link-background: transparent;
+$site-nav-link-hover-background: var(--neutral-100);
+$site-nav-link-active-background: var(--neutral-200);
+
+$site-nav-link-line-height: 1.1;
+$site-nav-link-padding: var(--size-m) var(--size-s);
+$site-nav-link-padding-desktop: var(--size-xs) var(--size-s);
+$site-nav-link-border-radius: .25em;
+
+
+//
+// Hamburger
+//
+$hamburger-padding: var(--size-2xs) var(--size-3xs);
+
+$hamburger-icon-foreground: var(--neutral-900);
+$hamburger-icon-width: 42px;
+$hamburger-icon-stroke-width: 6px;
+$hamburger-icon-animation-timing: 600ms;
+
+
+//
+//
+//
+
+$body-foreground: var(--neutral-600);
+$body-font-family: var(--ff-base);
+$body-font-size: var(--fs-400);
+$body-font-weight: var(--fw-regular);
+$body-line-height: 1.618;
+
+$heading-foreground: var(--neutral-900);
+$heading-font-family: var(--ff-accent);
+$heading-font-size: inherit;
+$heading-font-weight: var(--fw-bold);
+$heading-line-height: 1.1;
+
+$content-feature-max-width: minmax(0, 5rem);
+$content-popout-max-width: minmax(0, 2rem);
+$content-content-max-width: 65ch;
+$content-padding: 2rem;
+
+
+
+// -----------------------------------------------------------------------------
+// BUTTONS
+// -----------------------------------------------------------------------------
+
+$button-foreground: var(--neutral-100);
+$button-background: var(--accent-400);
+$button-font-size: var(--fs-300);
+$button-font-weight: var(--fw-semibold);
+$button-padding: var(--size-s) var(--size-m);
+$button-border-radius: .5em;
+
+$button-hover-foreground: var(--neutral-100);
+$button-hover-background: var(--neutral-900);
+
+$button-active-foreground: var(--neutral-100);
+$button-active-background: var(--neutral-900);
+
+
+
+// -----------------------------------------------------------------------------
+// INPUT
+// -----------------------------------------------------------------------------
+
+$input-foreground: var(--neutral-800);
+$input-background: var(--background-color);
+$input-padding: var(--size-3xs) var(--size-2xs);
+
+$input-font-size: var(--fs-400);
+
+$input-border: 1px solid var(--neutral-600);
+$input-border-radius: .25em;

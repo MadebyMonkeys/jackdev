@@ -1,0 +1,25 @@
+{{ if .enabled }}
+{{ $galleryFolder := "images/galleries/home" }}
+{{ $files := readDir (printf "static/%s" $galleryFolder) }}
+<section class="[ gallery ] [ full-width flow ] [ region ]">
+    <div class="narrow text--center">
+        <h2 class="block--title">{{ .block.title }}</h2>
+        <h4 class="block--subtitle h2">{{ .block.description }}</h4>
+    </div>
+    <div class="gallery-wrapper">
+        <ul class="gallery-grid grid-auto-fit">
+        {{ range $files }}
+            <li>
+            {{ if .IsDir }}
+            <!-- Skip directories, or you can handle directories if needed -->
+            {{ else if (or (eq (lower (path.Ext .Name)) ".jpg") (eq (lower (path.Ext .Name)) ".png") (eq (lower (path.Ext .Name)) ".jpeg") (eq (lower (path.Ext .Name)) ".gif")) }}
+                <a class="gallery-item lightbox-image" href="{{ $galleryFolder | relURL }}/{{ .Name }}">
+                    <img src="{{ $galleryFolder | relURL }}/{{ .Name }}" alt="Gallery image {{ .Name }}" />
+                </a>
+            {{ end }}
+            </li>
+        {{ end }}
+        </ul>
+    </div>
+</section>
+{{ end }}

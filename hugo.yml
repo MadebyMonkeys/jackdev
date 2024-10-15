@@ -1,0 +1,14 @@
+baseURL: 'https://jackvangestel.nl/'
+languageCode: 'en-nl'
+title: 'Jack van Gestel'
+
+params:
+  sitenav:
+    - title: Home
+      url: "/"
+    - title: About
+      url: "/about"
+    - title: Gallery
+      url: "/gallery"
+    - title: Contact
+      url: "/contact"

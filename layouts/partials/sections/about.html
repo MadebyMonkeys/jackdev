@@ -1,0 +1,12 @@
+{{ if .enabled }}
+<section class="[ about ] [ full full-width-split-screen ] []">
+    <div class="flow">
+        <h2 class="block--title">{{ .block.title }}</h2>
+        <h4 class="block--subtitle h2">{{ .block.description }}</h4>
+        <p>{{ .content.description }}</p>
+        <a href="{{ .content.link.url }}" class="button">{{ .content.link.title }}</a>
+    </div>
+    <img src="{{ .content.image }}" alt="">
+</section>
+{{ end }}
+

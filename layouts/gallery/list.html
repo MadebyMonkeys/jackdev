@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+
+    <div class="galleries-list">
+        {{ range .Pages }} <!-- Loop through all galleries under /galleries/ -->
+        <div class="gallery-card">
+            <a href="{{ .Permalink }}">
+                <h2>{{ .Title }}</h2>
+                <p>{{ .Params.description }}</p>
+            </a>
+        </div>
+        {{ end }}
+    </div>
+</main>
+{{ end }}

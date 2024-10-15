@@ -1,0 +1,10 @@
+enabled: true
+id: "spotify"
+
+block:
+  title: Featured Singel
+  description: Het werd zomer
+
+content:
+  type: track
+  id: 4rDt9QDTvaaKyLCzAOxYCs  #4X3xIfiPFFvCKHxJKK5lRo

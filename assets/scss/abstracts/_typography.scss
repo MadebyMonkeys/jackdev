@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// Font Families
+// -----------------------------------------------------------------------------
+
+$-ff-sans: "-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif";
+$-ff-serif: "Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol";
+$-ff-mono: "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace";
+
+$font-families: (
+    "base": #{$-ff-sans},
+    "accent": #{$-ff-serif},
+    "mono": #{$-ff-mono},
+);
+
+
+
+// -----------------------------------------------------------------------------
+//  Font Sizes
+// -----------------------------------------------------------------------------
+
+$font-sizes: (
+    "200": clamp(0.6944rem, 0.6856rem + 0.0444vw, 0.72rem),
+    "300": clamp(0.8333rem, 0.8101rem + 0.1159vw, 0.9rem),
+    "400": clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem),
+    "500": clamp(1.2rem, 1.1283rem + 0.3587vw, 1.4063rem),
+    "600": clamp(1.44rem, 1.3295rem + 0.5527vw, 1.7578rem),
+    "700": clamp(1.728rem, 1.5648rem + 0.8161vw, 2.1973rem),
+    "800": clamp(2.0736rem, 1.8395rem + 1.1704vw, 2.7466rem),
+    "900": clamp(2.4883rem, 2.1597rem + 1.6433vw, 3.4332rem),
+);
+
+
+
+
+// -----------------------------------------------------------------------------
+// Font Weights
+// -----------------------------------------------------------------------------
+
+$font-weights: (
+    "thin": 100,
+    "extralight": 200,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700,
+    "extrabold": 800,
+    "black": 900,
+);

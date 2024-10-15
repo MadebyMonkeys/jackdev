@@ -1,0 +1,19 @@
+{{ $galleryFolder := .Get "folder" }}
+{{ $folder := printf "%s/images" $galleryFolder }} <!-- Access the 'images' subfolder inside each gallery -->
+<div class="gallery">
+    {{ range readDir $folder }}
+        {{ if in (lower .Name) (slice ".jpg" ".jpeg" ".png" ".gif") }}
+            {{ $image := resources.Get (printf "%s/%s" $folder .Name) }}
+            {{ with $image }}
+                {{ $optimizedImage := .Resize "600x" }} <!-- Resize image to 600px wide -->
+                {{ $webpImage := $optimizedImage.Convert "webp" }} <!-- Convert to WebP -->
+                <div class="gallery-item">
+                    <picture>
+                        <source srcset="{{ $webpImage.RelPermalink }}" type="image/webp">
+                        <img src="{{ $optimizedImage.RelPermalink }}" alt="{{ .Name }}" loading="lazy">
+                    </picture>
+                </div>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</div>

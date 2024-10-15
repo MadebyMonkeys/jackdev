@@ -1,0 +1,126 @@
+@use "../abstracts" as *; 
+
+* {
+    &,
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+/* Prevent font-size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    hanging-punctuation: first last;
+    interpolate-size: allow-keywords;
+}
+
+:target {
+    scroll-margin-block: 5ex;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+:first-child {
+    margin-block-start: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+h1, h2, h3, h4, button, input, label {
+    line-height: 1.1;
+}
+
+h1, h2, h3, h4 {
+    font-size: inherit;
+    text-wrap: balance;
+}
+
+p, li, figcaption {
+    --_text-max-width: var(--text-max-width, 75ch);
+    max-width: var(--_text-max-width);
+    text-wrap: pretty;
+}
+
+
+:is(ul, ol)[class] {
+    list-style: '';
+}
+
+
+
+// -----------------------------------------------------------------------------
+// IMAGE RESET
+// -----------------------------------------------------------------------------
+
+img,
+picture {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+// -----------------------------------------------------------------------------
+// INPUT RESET
+// -----------------------------------------------------------------------------
+
+input, button, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+
+// -----------------------------------------------------------------------------
+// TABLE RESET
+// -----------------------------------------------------------------------------
+
+td,
+math,
+time[datetime*=":"] {
+    font-variant-numeric: tabular-nums lining-nums;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+//
+//
+//
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+    -webkit-appearance: button;
+    background-image: none;
+}
